@@ -1,5 +1,6 @@
 package com.example.data.network.di
 
+import com.example.common.utils.Constant.BASE_URL
 import com.example.data.network.utils.ApiService
 import dagger.Module
 import dagger.Provides
