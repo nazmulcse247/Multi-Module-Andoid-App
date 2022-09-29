@@ -12,11 +12,14 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class BlogViewModel @Inject constructor(private val getBlogUseCase : GetBlogUseCase) :ViewModel() {
+class BlogViewModel @Inject constructor(private val getBlogUseCase : GetBlogUseCase) : ViewModel() {
 
-    private val _blogList = MutableStateFlow(BlogState())
+    private val _blogList = MutableStateFlow<BlogState>(BlogState())
     val blogList : StateFlow<BlogState> = _blogList
 
+    init {
+        getBlog()
+    }
 
     fun getBlog(){
         getBlogUseCase().onEach {

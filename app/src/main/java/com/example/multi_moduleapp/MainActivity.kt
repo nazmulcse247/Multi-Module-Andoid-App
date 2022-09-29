@@ -26,8 +26,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding!!.root)
 
 
-        viewModel.getBlog()
+        //viewModel.getBlog()
 
+        getBlog()
+
+
+    }
+
+    private fun getBlog() {
         lifecycle.coroutineScope.launchWhenCreated {
             viewModel.blogList.collect {
 
@@ -46,13 +52,12 @@ class MainActivity : AppCompatActivity() {
                         binding!!.progressBar.visibility = View.VISIBLE
                     }
 
-                    Log.d("blog", "list size"+ it.size.toString())
+                    Log.d("ListSize", "list size"+ it.toString())
                     Toast.makeText(this@MainActivity,"size "+ it.size.toString(), Toast.LENGTH_LONG).show()
                     binding!!.progressBar.visibility = View.GONE
 
                 }
             }
         }
-
     }
 }
