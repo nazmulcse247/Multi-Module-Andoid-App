@@ -28,11 +28,11 @@ object DataModule {
         return retrofit.create(ApiService::class.java)
     }
 
-    @Provides
-    @Singleton
-    fun provideGetBlogRepository(apiService: ApiService) : BlogsRepository {
-        return BlogRepositoryImpl(apiService = apiService)
-    }
+//    @Provides
+//    @Singleton
+//    fun provideGetBlogRepository(apiService: ApiService) : BlogsRepository {
+//        return BlogRepositoryImpl(apiService = apiService)
+//    }
 
 
 }
