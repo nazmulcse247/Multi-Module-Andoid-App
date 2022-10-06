@@ -9,8 +9,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GetBlogUseCase @Inject constructor(private val blogsRepository: BlogsRepository)
-    : ApiUseCaseNonParams<Blogs>
-{
+class GetBlogUseCase @Inject constructor(private val blogsRepository: BlogsRepository) : ApiUseCaseNonParams<Blogs> {
     override suspend fun execute() = blogsRepository.getBlogs()
 }

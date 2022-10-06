@@ -14,7 +14,7 @@ import javax.inject.Inject
 
  class SafeApiRequest @Inject constructor() {
 
-    suspend fun <T : Any> safeApiRequest(call : suspend () -> Response<T>): T {
+    suspend fun <T : Any> safeApiRequest(call : suspend () -> Response<T>) : T {
         val response = call.invoke()
         if (response.isSuccessful) {
             return response.body()!!

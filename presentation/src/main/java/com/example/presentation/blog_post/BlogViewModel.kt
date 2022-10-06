@@ -1,5 +1,6 @@
 package com.example.presentation.blog_post
 
+import androidx.lifecycle.ViewModel
 import com.example.common.utils.ApiResult
 import com.example.common.utils.BaseViewModel
 import com.example.domain.use_case.GetBlogUseCase
@@ -9,7 +10,7 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 
 @HiltViewModel
-class BlogViewModel @Inject constructor(private val getBlogUseCase : GetBlogUseCase) : BaseViewModel() {
+class BlogViewModel @Inject constructor(private val getBlogUseCase : GetBlogUseCase) : ViewModel() {
 
     private val _blogList = MutableStateFlow<BlogState>(BlogState())
     val blogList : StateFlow<BlogState> = _blogList
@@ -19,10 +20,9 @@ class BlogViewModel @Inject constructor(private val getBlogUseCase : GetBlogUseC
     }
 
     fun getBlog(){
-        execute {
 
-            }
+
+
 
         }
     }
-}
